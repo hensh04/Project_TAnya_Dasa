@@ -66,7 +66,7 @@ Public Class clscustomer
     End Function
 
     Public Function cari() As Boolean
-        sql = "select * from customer where kd_cus=@1"
+        sql = "select * from customer where kd_cus=?"
         cmmd = New OdbcCommand(sql, MyCn)
         cmmd.Parameters.AddWithValue("@1", fkd_cus)
         Bacadata = cmmd.ExecuteReader
