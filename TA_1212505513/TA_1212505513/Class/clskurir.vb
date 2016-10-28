@@ -64,7 +64,7 @@ Public Class clskurir
     End Function
 
     Public Function cari() As Boolean
-        sql = "select * from kurir where kd_kur=@1"
+        sql = "select * from kurir where kd_kur=?"
         cmmd = New OdbcCommand(sql, MyCn)
         cmmd.Parameters.AddWithValue("@1", fkd_kur)
         Bacadata = cmmd.ExecuteReader

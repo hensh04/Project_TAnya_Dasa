@@ -32,7 +32,7 @@ Partial Class frmcetaknota
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.txtnm_cus = New System.Windows.Forms.TextBox()
         Me.btnCari = New System.Windows.Forms.Button()
-        Me.txNo_pesan = New System.Windows.Forms.TextBox()
+        Me.txtNo_pesan = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -132,7 +132,7 @@ Partial Class frmcetaknota
         Me.GroupBox2.Controls.Add(Me.DateTimePicker1)
         Me.GroupBox2.Controls.Add(Me.txtnm_cus)
         Me.GroupBox2.Controls.Add(Me.btnCari)
-        Me.GroupBox2.Controls.Add(Me.txNo_pesan)
+        Me.GroupBox2.Controls.Add(Me.txtNo_pesan)
         Me.GroupBox2.Controls.Add(Me.Label6)
         Me.GroupBox2.Controls.Add(Me.Label5)
         Me.GroupBox2.Controls.Add(Me.Label4)
@@ -141,14 +141,14 @@ Partial Class frmcetaknota
         Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox2.Size = New System.Drawing.Size(625, 293)
+        Me.GroupBox2.Size = New System.Drawing.Size(1094, 233)
         Me.GroupBox2.TabIndex = 10
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Data Pesanan"
         '
         'DateTimePicker1
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(191, 63)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(617, 58)
         Me.DateTimePicker1.Margin = New System.Windows.Forms.Padding(4)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(257, 26)
@@ -156,7 +156,7 @@ Partial Class frmcetaknota
         '
         'txtnm_cus
         '
-        Me.txtnm_cus.Location = New System.Drawing.Point(304, 167)
+        Me.txtnm_cus.Location = New System.Drawing.Point(28, 166)
         Me.txtnm_cus.Margin = New System.Windows.Forms.Padding(4)
         Me.txtnm_cus.Multiline = True
         Me.txtnm_cus.Name = "txtnm_cus"
@@ -166,28 +166,28 @@ Partial Class frmcetaknota
         '
         'btnCari
         '
-        Me.btnCari.Location = New System.Drawing.Point(492, 54)
+        Me.btnCari.Location = New System.Drawing.Point(458, 157)
         Me.btnCari.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCari.Name = "btnCari"
-        Me.btnCari.Size = New System.Drawing.Size(100, 50)
+        Me.btnCari.Size = New System.Drawing.Size(416, 50)
         Me.btnCari.TabIndex = 4
         Me.btnCari.Text = "Cari"
         Me.btnCari.UseVisualStyleBackColor = True
         '
-        'txNo_pesan
+        'txtNo_pesan
         '
-        Me.txNo_pesan.Location = New System.Drawing.Point(32, 167)
-        Me.txNo_pesan.Margin = New System.Windows.Forms.Padding(4)
-        Me.txNo_pesan.Multiline = True
-        Me.txNo_pesan.Name = "txNo_pesan"
-        Me.txNo_pesan.Size = New System.Drawing.Size(132, 41)
-        Me.txNo_pesan.TabIndex = 3
-        Me.txNo_pesan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtNo_pesan.Location = New System.Drawing.Point(187, 43)
+        Me.txtNo_pesan.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtNo_pesan.Multiline = True
+        Me.txtNo_pesan.Name = "txtNo_pesan"
+        Me.txtNo_pesan.Size = New System.Drawing.Size(132, 41)
+        Me.txtNo_pesan.TabIndex = 3
+        Me.txtNo_pesan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(300, 132)
+        Me.Label6.Location = New System.Drawing.Point(24, 131)
         Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(131, 20)
@@ -197,7 +197,7 @@ Partial Class frmcetaknota
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(28, 63)
+        Me.Label5.Location = New System.Drawing.Point(454, 58)
         Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(138, 20)
@@ -207,7 +207,7 @@ Partial Class frmcetaknota
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(28, 132)
+        Me.Label4.Location = New System.Drawing.Point(24, 54)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(134, 20)
@@ -220,7 +220,7 @@ Partial Class frmcetaknota
         Me.ListView1.Cursor = System.Windows.Forms.Cursors.Default
         Me.ListView1.FullRowSelect = True
         Me.ListView1.GridLines = True
-        Me.ListView1.Location = New System.Drawing.Point(17, 456)
+        Me.ListView1.Location = New System.Drawing.Point(18, 396)
         Me.ListView1.Margin = New System.Windows.Forms.Padding(4)
         Me.ListView1.Name = "ListView1"
         Me.ListView1.Size = New System.Drawing.Size(1101, 181)
@@ -263,7 +263,7 @@ Partial Class frmcetaknota
         '
         'btncetak
         '
-        Me.btncetak.Location = New System.Drawing.Point(17, 774)
+        Me.btncetak.Location = New System.Drawing.Point(18, 735)
         Me.btncetak.Margin = New System.Windows.Forms.Padding(4)
         Me.btncetak.Name = "btncetak"
         Me.btncetak.Size = New System.Drawing.Size(229, 96)
@@ -273,7 +273,7 @@ Partial Class frmcetaknota
         '
         'btnbatal
         '
-        Me.btnbatal.Location = New System.Drawing.Point(803, 797)
+        Me.btnbatal.Location = New System.Drawing.Point(803, 758)
         Me.btnbatal.Margin = New System.Windows.Forms.Padding(4)
         Me.btnbatal.Name = "btnbatal"
         Me.btnbatal.Size = New System.Drawing.Size(140, 50)
@@ -283,7 +283,7 @@ Partial Class frmcetaknota
         '
         'btnkeluar
         '
-        Me.btnkeluar.Location = New System.Drawing.Point(978, 797)
+        Me.btnkeluar.Location = New System.Drawing.Point(978, 758)
         Me.btnkeluar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnkeluar.Name = "btnkeluar"
         Me.btnkeluar.Size = New System.Drawing.Size(140, 50)
@@ -369,7 +369,7 @@ Partial Class frmcetaknota
         Me.GroupBox3.Controls.Add(Me.txtdp)
         Me.GroupBox3.Controls.Add(Me.txttotalhrg)
         Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox3.Location = New System.Drawing.Point(17, 645)
+        Me.GroupBox3.Location = New System.Drawing.Point(18, 596)
         Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4)
@@ -380,6 +380,7 @@ Partial Class frmcetaknota
         'combojnsbrg
         '
         Me.combojnsbrg.FormattingEnabled = True
+        Me.combojnsbrg.Items.AddRange(New Object() {"DP", "Lunas"})
         Me.combojnsbrg.Location = New System.Drawing.Point(129, 72)
         Me.combojnsbrg.Margin = New System.Windows.Forms.Padding(4)
         Me.combojnsbrg.MaxLength = 10
@@ -391,7 +392,7 @@ Partial Class frmcetaknota
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1132, 883)
+        Me.ClientSize = New System.Drawing.Size(1132, 854)
         Me.Controls.Add(Me.btnkeluar)
         Me.Controls.Add(Me.btnbatal)
         Me.Controls.Add(Me.btncetak)
@@ -423,7 +424,7 @@ Partial Class frmcetaknota
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents txNo_pesan As System.Windows.Forms.TextBox
+    Friend WithEvents txtNo_pesan As System.Windows.Forms.TextBox
     Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
     Friend WithEvents txtnm_cus As System.Windows.Forms.TextBox
     Friend WithEvents btnCari As System.Windows.Forms.Button

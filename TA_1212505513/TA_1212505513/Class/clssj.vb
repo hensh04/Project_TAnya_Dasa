@@ -71,7 +71,7 @@ Public Class clssj
 
 
     Public Function cari() As Boolean
-        sql = "select * from sj where no_sj=@1"
+        sql = "select * from sj where no_sj=?"
         cmmd = New OdbcCommand(sql, MyCn)
         cmmd.Parameters.AddWithValue("@1", fno_sj)
         Bacadata = cmmd.ExecuteReader
@@ -89,7 +89,7 @@ Public Class clssj
     End Function
 
     Public Function simpan() As Integer
-        sql = "insert into sj(no_sj,tglsj,no_kwit,kd_kur) values(@1,@2,@3,@4)"
+        sql = "insert into sj(no_sj,tglsj,no_kwit,kd_kur) values(?,?,?,?)"
         cmmd = New OdbcCommand(sql, MyCn)
         cmmd.Parameters.AddWithValue("@1", fno_sj)
         cmmd.Parameters.AddWithValue("@2", ftglsj)

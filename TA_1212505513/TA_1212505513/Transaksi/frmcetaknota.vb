@@ -15,6 +15,15 @@ Public Class frmcetaknota
         bukaConn()
         txtNo_nota.Text = objnota.autonumber
         btnCari.Focus()
+        dtpTgl_nota.Enabled = False
+        txtNo_nota.Enabled = False
+        DateTimePicker1.Enabled = False
+        txtNo_pesan.Enabled = False
+        txtnm_cus.Enabled = False
+        txttotalhrg.Enabled = False
+        combojnsbrg.Enabled = False
+        txtdp.Enabled = False
+        txtsisabayar.Enabled = False
     End Sub
 
     Function asubtotal() As Double
@@ -59,13 +68,56 @@ Public Class frmcetaknota
         Dim opop As New popuppesanan
         opop.ShowDialog()
         If opop.rno_sp <> "" Then
-            txNo_pesan.Text = opop.rno_sp
+            txtNo_pesan.Text = opop.rno_sp
             DateTimePicker1.Value = opop.rtglsp
             txtnm_cus.Text = opop.rnmcus
 
+            tampildata(txtNo_pesan.Text)
+
+            objpesanan.pno_sp = txtNo_pesan.Text
+            If objpesanan.cari = True Then
+                tampildata(objpesanan.pno_sp)
+            End If
 
         End If
         btncetak.Enabled = True
         btnbatal.Enabled = True
+        combojnsbrg.Enabled = True
+    End Sub
+
+    Private Sub combojnsbrg_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles combojnsbrg.SelectedIndexChanged
+        If combojnsbrg.Text = "---Silahkan Pilih---" Then
+            txtdp.Enabled = False
+            txtsisabayar.Enabled = False
+
+        ElseIf combojnsbrg.Text = "Lunas" Then
+            txtdp.Text = txtsisabayar.Text
+
+        ElseIf combojnsbrg.Text = "DP" Then
+            txtdp.Enabled = True
+
+        End If
+    End Sub
+
+    Private Sub txtdp_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtdp.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            If Val(txtdp.Text) > Val(txttotalhrg.Text) Then
+                MsgBox("Jumlah DP Tidak Boleh Kurang Dari Total", MsgBoxStyle.Information, "Peringatan")
+            Else
+                txtsisabayar.Text = Val(txtdp.Text) + Val(txttotalhrg.Text)
+                MsgBox("" & txtsisabayar.Text & vbCrLf & " (" & Terbilang(txtsisabayar.Text) & ")", MsgBoxStyle.Information, "Sisa Pembayaran")
+            End If
+        End If
+    End Sub
+
+    'Private Sub txtdp_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtdp.TextChanged
+    '    txtsisabayar.Text = Val(txttotalhrg.Text) - Val(txtdp.Text)
+    'End Sub
+
+    Private Sub txtdp_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtdp.TextChanged
+        Dim a As Double
+        a = txtdp.Text
+        txtdp.Text = Format(a, "###,###,###")
+        txtdp.SelectionStart = Len(txtdp.Text)
     End Sub
 End Class

@@ -128,7 +128,7 @@ Public Class Frmentrypesanan
                 objDetil_SP.pno_sp = txtNo_pesan.Text
                 objDetil_SP.pkd_brg = ListView1.Items(x).SubItems(0).Text
                 objDetil_SP.pjmlsp = CDbl(ListView1.Items(x).SubItems(4).Text)
-                objDetil_SP.phrgsp = ListView1.Items(x).SubItems(3).Text
+                objDetil_SP.phrgsp = ListView1.Items(x).SubItems(5).Text
                 nilaikembali2 = objDetil_SP.simpan()
 
             Next

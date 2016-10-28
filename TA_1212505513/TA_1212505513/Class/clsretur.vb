@@ -57,7 +57,7 @@ Public Class clsretur
     End Function
 
     Public Function cari() As Boolean
-        sql = "select * from retur where no_ret=@1"
+        sql = "select * from retur where no_ret=?"
         cmmd = New OdbcCommand(sql, MyCn)
         cmmd.Parameters.AddWithValue("@1", fno_ret)
         Bacadata = cmmd.ExecuteReader
@@ -74,7 +74,7 @@ Public Class clsretur
     End Function
 
     Public Function simpan() As Integer
-        sql = "insert into retur(no_ret,tglret,no_sj) values(@1,@2,@3)"
+        sql = "insert into retur(no_ret,tglret,no_sj) values(?,?,?)"
         cmmd = New OdbcCommand(sql, MyCn)
         cmmd.Parameters.AddWithValue("@1", fno_ret)
         cmmd.Parameters.AddWithValue("@2", ftglret)

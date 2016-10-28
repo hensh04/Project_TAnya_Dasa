@@ -43,7 +43,7 @@ Public Class clsdetil_sp
 
 
     Public Function cari() As Boolean
-        sql = "select * from detil_sp where no_sp=@1"
+        sql = "select * from detil_sp where no_sp=?"
         cmmd = New OdbcCommand(sql, MyCn)
         cmmd.Parameters.AddWithValue("@1", fno_sp)
         Bacadata = cmmd.ExecuteReader

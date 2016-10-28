@@ -59,7 +59,7 @@ Public Class clskwitansi
     End Function
 
     Public Function cari() As Boolean
-        sql = "select * from kwitansi where no_kwit=@1"
+        sql = "select * from kwitansi where no_kwit=?"
         cmmd = New OdbcCommand(sql, MyCn)
         cmmd.Parameters.AddWithValue("@1", fno_kwit)
         Bacadata = cmmd.ExecuteReader
@@ -76,7 +76,7 @@ Public Class clskwitansi
     End Function
 
     Public Function simpan() As Integer
-        sql = "insert into kwitansi(no_kwit,tglkwit,no_nota) values(@1,@2,@3)"
+        sql = "insert into kwitansi(no_kwit,tglkwit,no_nota) values(?,?,?)"
         cmmd = New OdbcCommand(sql, MyCn)
         cmmd.Parameters.AddWithValue("@1", fno_kwit)
         cmmd.Parameters.AddWithValue("@2", ftglkwit)

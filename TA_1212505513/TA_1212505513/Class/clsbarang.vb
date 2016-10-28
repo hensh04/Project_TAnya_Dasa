@@ -111,7 +111,7 @@ Public Class clsbarang
     End Function
 
     Public Function cari() As Boolean
-        sql = "select * from barang where kd_brg=@1"
+        sql = "select * from barang where kd_brg=?"
         cmmd = New OdbcCommand(sql, MyCn)
         cmmd.Parameters.AddWithValue("@1", fkd_brg)
         Bacadata = cmmd.ExecuteReader

@@ -34,7 +34,7 @@ Public Class clsdetil_sj
 
 
     Public Function cari() As Boolean
-        sql = "select * from detil_sj where no_sj=@1"
+        sql = "select * from detil_sj where no_sj=?"
         cmmd = New OdbcCommand(sql, MyCn)
         cmmd.Parameters.AddWithValue("@1", fno_sj)
         Bacadata = cmmd.ExecuteReader
@@ -52,7 +52,7 @@ Public Class clsdetil_sj
 
 
     Public Function simpan() As Integer
-        sql = "insert into detil_sj(no_sj,kd_brg,jmlkrm) values(@1,@2,@3)"
+        sql = "insert into detil_sj(no_sj,kd_brg,jmlkrm) values(?,?,?)"
         cmmd = New OdbcCommand(sql, MyCn)
         cmmd.Parameters.AddWithValue("@1", fno_sj)
         cmmd.Parameters.AddWithValue("@2", fkd_brg)

@@ -81,7 +81,7 @@ Public Class clssp
 
 
     Public Function cari() As Boolean
-        sql = "select * from sp where no_sp=@1"
+        sql = "select * from sp where no_sp=?"
         cmmd = New OdbcCommand(sql, MyCn)
         cmmd.Parameters.AddWithValue("@1", fno_sp)
         Bacadata = cmmd.ExecuteReader
@@ -89,7 +89,7 @@ Public Class clssp
         If Bacadata.HasRows = True Then
             fno_sp = Bacadata.Item("no_sp")
             ftglsp = Bacadata.Item("tglsp")
-            fkd_cus = Bacadata.Item("ks_cus")
+            fkd_cus = Bacadata.Item("kd_cus")
             falmtkrm = Bacadata.Item("almtkrm")
             ftgl_krm = Bacadata.Item("tgl_krm")
             Return True

@@ -79,7 +79,7 @@ Public Class clsnota
     End Function
 
     Public Function cari() As Boolean
-        sql = "select * from nota where no_nota=@1"
+        sql = "select * from nota where no_nota=?"
         cmmd = New OdbcCommand(sql, MyCn)
         cmmd.Parameters.AddWithValue("@1", fno_nota)
         Bacadata = cmmd.ExecuteReader

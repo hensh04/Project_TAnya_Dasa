@@ -63,7 +63,7 @@ Public Class clsdetil_retur
     End Property
 
     Public Function cari() As Boolean
-        sql = "select * from detil_retur where no_ret=@1"
+        sql = "select * from detil_retur where no_ret=?"
         cmmd = New OdbcCommand(sql, MyCn)
         cmmd.Parameters.AddWithValue("@1", fno_ret)
         Bacadata = cmmd.ExecuteReader
@@ -84,7 +84,7 @@ Public Class clsdetil_retur
 
 
     Public Function simpan() As Integer
-        sql = "insert into detil_retur(no_ret,kd_brg,no,jmlret,ket,jnsganti) values(@1,@2,@3,@4,@5,@6)"
+        sql = "insert into detil_retur(no_ret,kd_brg,no,jmlret,ket,jnsganti) values(?,?,?,?,?,?)"
         cmmd = New OdbcCommand(sql, MyCn)
         cmmd.Parameters.AddWithValue("@1", fno_ret)
         cmmd.Parameters.AddWithValue("@2", fkd_brg)
