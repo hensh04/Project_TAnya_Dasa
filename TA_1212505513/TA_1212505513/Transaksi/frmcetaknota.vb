@@ -59,7 +59,7 @@ Public Class frmcetaknota
             subtotal = CInt(xList.Item(baris).pjmlsp) * CInt(objbarang.phrgbrg)
             ListView1.Items(baris).SubItems.Add(subtotal)
 
-            txttotalhrg.Text = Format(CDbl(asubtotal()), " ###,###,###")
+            txttotalhrg.Text = Format(asubtotal(), "###,##0")
 
         Next
     End Sub
@@ -95,16 +95,18 @@ Public Class frmcetaknota
 
         ElseIf combojnsbrg.Text = "DP" Then
             txtdp.Enabled = True
-
+            txtdp.Text = 0
         End If
     End Sub
 
     Private Sub txtdp_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtdp.KeyDown
         If e.KeyCode = Keys.Enter Then
             If Val(txtdp.Text) > Val(txttotalhrg.Text) Then
-                MsgBox("Jumlah DP Tidak Boleh Kurang Dari Total", MsgBoxStyle.Information, "Peringatan")
+                MsgBox("Jumlah DP Tidak Boleh lebih Dari Total", MsgBoxStyle.Information, "Peringatan")
+                'ElseIf Val(txtdp.Text) < 0 Then
+                '    MsgBox("Jumlah DP Tidak Boleh kurang dari 0", MsgBoxStyle.Information, "Peringatan")
             Else
-                txtsisabayar.Text = Val(txtdp.Text) + Val(txttotalhrg.Text)
+                txtsisabayar.Text = Format(txttotalhrg.Text - txtdp.Text, "###,##0")
                 MsgBox("" & txtsisabayar.Text & vbCrLf & " (" & Terbilang(txtsisabayar.Text) & ")", MsgBoxStyle.Information, "Sisa Pembayaran")
             End If
         End If
@@ -115,9 +117,15 @@ Public Class frmcetaknota
     'End Sub
 
     Private Sub txtdp_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtdp.TextChanged
-        Dim a As Double
-        a = txtdp.Text
-        txtdp.Text = Format(a, "###,###,###")
-        txtdp.SelectionStart = Len(txtdp.Text)
+        If txtdp.Text.Length < 1 Then
+            txtdp.Text = 0
+        Else
+            Dim a As Double
+            a = txtdp.Text
+            txtdp.Text = Format(a, "###,##0")
+            txtdp.SelectionStart = Len(txtdp.Text)
+        End If
+
+        
     End Sub
 End Class
