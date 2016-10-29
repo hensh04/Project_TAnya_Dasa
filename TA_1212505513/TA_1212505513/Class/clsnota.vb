@@ -109,12 +109,10 @@ Public Class clsnota
     End Function
 
     Public Function tampildata(ByVal xData As String) As List(Of clsnota)
-        Dim viloid As String
         Dim baca_class As New List(Of clsnota)
-
-        viloid = "select * from nota where no_nota like '%" & xData & "%'"
-        cmmd = New OdbcCommand(viloid, MyCn)
-
+        'ga usah boros2 variabel nnti bingung sendiri
+        sql = "select * from nota where no_nota like '%" & xData & "%'"
+        cmmd = New OdbcCommand(sql, MyCn)
         Bacadata = cmmd.ExecuteReader
         If Bacadata.HasRows Then
             While Bacadata.Read

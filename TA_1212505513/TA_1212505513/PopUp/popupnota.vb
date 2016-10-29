@@ -13,7 +13,7 @@ Public Class popupnota
     Dim objcustomer As New clscustomer
     Dim objbarang As New clsbarang
 
-    Sub isiListView(Optional ByVal kriteria As String = "%")
+    Sub isiListView(Optional ByVal kriteria As String = "")
         Dim xList As List(Of clsnota)
         xList = objnota.tampildata(kriteria)
         ListView1.Items.Clear()
@@ -25,7 +25,7 @@ Public Class popupnota
             If objpesanan.cari = True Then
                 ListView1.Items(baris).SubItems.Add(objpesanan.pkd_cus)
             End If
-            objcustomer.pkd_cus = objcustomer.pkd_cus
+            objcustomer.pkd_cus = objpesanan.pkd_cus
             If objcustomer.cari = True Then
                 ListView1.Items(baris).SubItems.Add(objcustomer.pnm_cus)
             End If
