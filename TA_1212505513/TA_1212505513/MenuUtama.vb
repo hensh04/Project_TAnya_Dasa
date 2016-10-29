@@ -23,4 +23,8 @@
     Private Sub CetakNotaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CetakNotaToolStripMenuItem.Click
         frmcetaknota.ShowDialog()
     End Sub
+
+    Private Sub CetakKwitansiToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CetakKwitansiToolStripMenuItem.Click
+        frmcetakkwt.ShowDialog()
+    End Sub
 End Class

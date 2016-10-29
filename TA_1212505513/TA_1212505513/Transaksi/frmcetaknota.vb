@@ -24,6 +24,7 @@ Public Class frmcetaknota
         combojnsbrg.Enabled = False
         txtdp.Enabled = False
         txtsisabayar.Enabled = False
+        combojnsbrg.Text = "---Silahkan Pilih---"
     End Sub
 
     Function asubtotal() As Double
@@ -86,46 +87,93 @@ Public Class frmcetaknota
     End Sub
 
     Private Sub combojnsbrg_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles combojnsbrg.SelectedIndexChanged
-        If combojnsbrg.Text = "---Silahkan Pilih---" Then
-            txtdp.Enabled = False
-            txtsisabayar.Enabled = False
+        'If combojnsbrg.Text = "---Silahkan Pilih---" Then
+        '    txtdp.Enabled = False
+        '    txtsisabayar.Enabled = False
 
-        ElseIf combojnsbrg.Text = "Lunas" Then
-            txtdp.Text = txtsisabayar.Text
+        'ElseIf combojnsbrg.Text = "Lunas" Then
+        '    txtdp.Text = txtsisabayar.Text
+        '    txtdp.Clear()
+        '    txtsisabayar.Text = "0"
+        '    txtdp.Enabled = False
+        '    txtsisabayar.Enabled = False
 
-        ElseIf combojnsbrg.Text = "DP" Then
-            txtdp.Enabled = True
+        'ElseIf combojnsbrg.Text = "DP" Then
+        '    txtdp.Enabled = True
+        '    txtdp.Text = 0
+        'End If
+
+        If combojnsbrg.SelectedItem = "DP" Then
+            txtdp.Text = Val(txttotalhrg.Text) * 0.5
+            txtdp.Text = Format(txttotalhrg.Text * 0.5, "###,##0")
+            txtsisabayar.Text = Val(txttotalhrg.Text) - Val(txtdp.Text)
+            txtsisabayar.Text = Format(txttotalhrg.Text - txtdp.Text, "###,##0")
+        Else
             txtdp.Text = 0
+            txtsisabayar.Text = 0
         End If
+
     End Sub
 
     Private Sub txtdp_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtdp.KeyDown
-        If e.KeyCode = Keys.Enter Then
-            If Val(txtdp.Text) > Val(txttotalhrg.Text) Then
-                MsgBox("Jumlah DP Tidak Boleh lebih Dari Total", MsgBoxStyle.Information, "Peringatan")
-                'ElseIf Val(txtdp.Text) < 0 Then
-                '    MsgBox("Jumlah DP Tidak Boleh kurang dari 0", MsgBoxStyle.Information, "Peringatan")
-            Else
-                txtsisabayar.Text = Format(txttotalhrg.Text - txtdp.Text, "###,##0")
-                MsgBox("" & txtsisabayar.Text & vbCrLf & " (" & Terbilang(txtsisabayar.Text) & ")", MsgBoxStyle.Information, "Sisa Pembayaran")
-            End If
-        End If
+        '    If e.KeyCode = Keys.Enter Then
+        '        If Val(txtdp.Text) > Val(txttotalhrg.Text) Then
+        '            MsgBox("Jumlah DP Tidak Boleh lebih Dari Total", MsgBoxStyle.Information, "Peringatan")
+        '        Else
+        txtsisabayar.Text = Format(txttotalhrg.Text - txtdp.Text, "###,##0")
+        '            MsgBox("" & txtsisabayar.Text & vbCrLf & " (" & Terbilang(txtsisabayar.Text) & ")", MsgBoxStyle.Information, "Sisa Pembayaran")
+        '        End If
+        '    End If
     End Sub
 
-    'Private Sub txtdp_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtdp.TextChanged
-    '    txtsisabayar.Text = Val(txttotalhrg.Text) - Val(txtdp.Text)
-    'End Sub
+    Private Sub txtdp_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtdp.KeyPress
+        '    If Not (Asc(e.KeyChar) >= Asc("0") And Asc(e.KeyChar) <= Asc("9") Or Asc(e.KeyChar) = 8 Or Asc(e.KeyChar) = 13) Then
+        '        e.KeyChar = Chr(0)
+        '        MessageBox.Show("Harus Masukan Angka!")
+        '    End If
+        'End Sub
 
-    Private Sub txtdp_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtdp.TextChanged
-        If txtdp.Text.Length < 1 Then
-            txtdp.Text = 0
+        'Private Sub txtdp_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtdp.TextChanged
+        'If txtdp.Text.Length < 1 Then
+        '    txtdp.Text = 0
+        'Else
+        Dim a As Double
+        a = txtdp.Text
+        txtdp.Text = Format(a, "###,##0")
+        txtdp.SelectionStart = Len(txtdp.Text)
+        'End If
+    End Sub
+
+    Private Sub btnkeluar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnkeluar.Click
+        Me.Dispose()
+    End Sub
+
+    Private Sub btncetak_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btncetak.Click
+        If txtNo_nota.Text = "" Or combojnsbrg.Text = "---Silahkan Pilih---" Or combojnsbrg.Text = "0" Then
+            MsgBox("Data Belum Lengkap...!", MsgBoxStyle.Information, "INFORMASI")
         Else
-            Dim a As Double
-            a = txtdp.Text
-            txtdp.Text = Format(a, "###,##0")
-            txtdp.SelectionStart = Len(txtdp.Text)
-        End If
+            Dim nilaikembali1 As Integer
+            objnota.pno_nota = txtNo_nota.Text
+            objnota.ptglnota = Format(dtpTgl_nota.Value, "dd-MM-yyyy")
+            objnota.pdp = txtdp.Text
+            objnota.pjnsbyr = combojnsbrg.Text
+            objnota.pno_sp = txtNo_pesan.Text
+            nilaikembali1 = objnota.simpan()
 
-        
+            If nilaikembali1 = 1 Then
+                MsgBox("Data Berhasil Disimpan...!", MsgBoxStyle.Information, "INFORMASI")
+                IdCetakan = "1"
+                TampilCetakan.ShowDialog()
+            Else
+                MessageBox.Show("Data Gagal Disimpan...!")
+            End If
+
+            'Kunci()
+            ' Clear()
+            txtNo_nota.Text = objnota.autonumber()
+            btncetak.Enabled = False
+            btnbatal.Enabled = False
+            btnCari.Focus()
+        End If
     End Sub
 End Class

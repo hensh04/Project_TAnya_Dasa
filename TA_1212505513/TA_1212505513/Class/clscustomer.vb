@@ -68,7 +68,7 @@ Public Class clscustomer
     Public Function cari() As Boolean
         sql = "select * from customer where kd_cus=?"
         cmmd = New OdbcCommand(sql, MyCn)
-        cmmd.Parameters.AddWithValue("@1", fkd_cus)
+        cmmd.Parameters.AddWithValue("?", fkd_cus)
         Bacadata = cmmd.ExecuteReader
         Bacadata.Read()
         If Bacadata.HasRows = True Then

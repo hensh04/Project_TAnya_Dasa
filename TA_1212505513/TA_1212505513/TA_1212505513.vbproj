@@ -57,10 +57,17 @@
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core">
@@ -156,10 +163,22 @@
     <Compile Include="PopUp\popupkur.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="PopUp\popupnota.Designer.vb">
+      <DependentUpon>popupnota.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\popupnota.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PopUp\popuppesanan.Designer.vb">
       <DependentUpon>popuppesanan.vb</DependentUpon>
     </Compile>
     <Compile Include="PopUp\popuppesanan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TampilCetakan.Designer.vb">
+      <DependentUpon>TampilCetakan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TampilCetakan.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Transaksi\frmcetakkwt.Designer.vb">
@@ -179,6 +198,12 @@
     </Compile>
     <Compile Include="Transaksi\Frmentrypesanan.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaksi\ViewCetakan\Cetak_Nota.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cetak_Nota.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -210,8 +235,14 @@
     <EmbeddedResource Include="PopUp\popupkur.resx">
       <DependentUpon>popupkur.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\popupnota.resx">
+      <DependentUpon>popupnota.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PopUp\popuppesanan.resx">
       <DependentUpon>popuppesanan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TampilCetakan.resx">
+      <DependentUpon>TampilCetakan.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transaksi\frmcetakkwt.resx">
       <DependentUpon>frmcetakkwt.vb</DependentUpon>
@@ -221,6 +252,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Transaksi\Frmentrypesanan.resx">
       <DependentUpon>Frmentrypesanan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaksi\ViewCetakan\Cetak_Nota.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Cetak_Nota.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -255,6 +290,9 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

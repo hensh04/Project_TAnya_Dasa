@@ -29,9 +29,10 @@ Partial Class MenuUtama
         Me.EntryDataKurirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TransaksiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EntryPesananToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CetakNotaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaporanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.KeluarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CetakNotaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CetakKwitansiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -72,7 +73,7 @@ Partial Class MenuUtama
         '
         'TransaksiToolStripMenuItem
         '
-        Me.TransaksiToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EntryPesananToolStripMenuItem, Me.CetakNotaToolStripMenuItem})
+        Me.TransaksiToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EntryPesananToolStripMenuItem, Me.CetakNotaToolStripMenuItem, Me.CetakKwitansiToolStripMenuItem})
         Me.TransaksiToolStripMenuItem.Name = "TransaksiToolStripMenuItem"
         Me.TransaksiToolStripMenuItem.Size = New System.Drawing.Size(80, 24)
         Me.TransaksiToolStripMenuItem.Text = "Transaksi"
@@ -80,8 +81,14 @@ Partial Class MenuUtama
         'EntryPesananToolStripMenuItem
         '
         Me.EntryPesananToolStripMenuItem.Name = "EntryPesananToolStripMenuItem"
-        Me.EntryPesananToolStripMenuItem.Size = New System.Drawing.Size(168, 24)
+        Me.EntryPesananToolStripMenuItem.Size = New System.Drawing.Size(173, 24)
         Me.EntryPesananToolStripMenuItem.Text = "Entry Pesanan"
+        '
+        'CetakNotaToolStripMenuItem
+        '
+        Me.CetakNotaToolStripMenuItem.Name = "CetakNotaToolStripMenuItem"
+        Me.CetakNotaToolStripMenuItem.Size = New System.Drawing.Size(173, 24)
+        Me.CetakNotaToolStripMenuItem.Text = "Cetak Nota"
         '
         'LaporanToolStripMenuItem
         '
@@ -95,11 +102,11 @@ Partial Class MenuUtama
         Me.KeluarToolStripMenuItem.Size = New System.Drawing.Size(63, 24)
         Me.KeluarToolStripMenuItem.Text = "Keluar"
         '
-        'CetakNotaToolStripMenuItem
+        'CetakKwitansiToolStripMenuItem
         '
-        Me.CetakNotaToolStripMenuItem.Name = "CetakNotaToolStripMenuItem"
-        Me.CetakNotaToolStripMenuItem.Size = New System.Drawing.Size(168, 24)
-        Me.CetakNotaToolStripMenuItem.Text = "Cetak Nota"
+        Me.CetakKwitansiToolStripMenuItem.Name = "CetakKwitansiToolStripMenuItem"
+        Me.CetakKwitansiToolStripMenuItem.Size = New System.Drawing.Size(173, 24)
+        Me.CetakKwitansiToolStripMenuItem.Text = "Cetak Kwitansi"
         '
         'MenuUtama
         '
@@ -109,7 +116,7 @@ Partial Class MenuUtama
         Me.ControlBox = False
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "MenuUtama"
         Me.Text = "Menu Utama"
         Me.MenuStrip1.ResumeLayout(False)
@@ -128,5 +135,6 @@ Partial Class MenuUtama
     Friend WithEvents LaporanToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents KeluarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CetakNotaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents CetakKwitansiToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

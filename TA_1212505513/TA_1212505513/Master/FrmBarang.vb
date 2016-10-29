@@ -210,6 +210,4 @@ Public Class FrmBarang
             txtnm_brg.Focus()
         End If
     End Sub
-
-  
 End Class

@@ -38,10 +38,10 @@ Partial Class frmcetakkwt
         Me.txtTerbilang = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txtcari = New System.Windows.Forms.GroupBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.btn_keluar = New System.Windows.Forms.Button()
+        Me.btn_batal = New System.Windows.Forms.Button()
+        Me.btn_cetak = New System.Windows.Forms.Button()
+        Me.btncari = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.txtcari.SuspendLayout()
         Me.SuspendLayout()
@@ -49,26 +49,29 @@ Partial Class frmcetakkwt
         'dtpTgl_kwit
         '
         Me.dtpTgl_kwit.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtpTgl_kwit.Location = New System.Drawing.Point(128, 16)
+        Me.dtpTgl_kwit.Location = New System.Drawing.Point(171, 20)
+        Me.dtpTgl_kwit.Margin = New System.Windows.Forms.Padding(4)
         Me.dtpTgl_kwit.Name = "dtpTgl_kwit"
-        Me.dtpTgl_kwit.Size = New System.Drawing.Size(200, 22)
+        Me.dtpTgl_kwit.Size = New System.Drawing.Size(265, 26)
         Me.dtpTgl_kwit.TabIndex = 9
         '
         'txtNo_kwit
         '
         Me.txtNo_kwit.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNo_kwit.Location = New System.Drawing.Point(571, 16)
+        Me.txtNo_kwit.Location = New System.Drawing.Point(761, 20)
+        Me.txtNo_kwit.Margin = New System.Windows.Forms.Padding(4)
         Me.txtNo_kwit.Name = "txtNo_kwit"
-        Me.txtNo_kwit.Size = New System.Drawing.Size(121, 22)
+        Me.txtNo_kwit.Size = New System.Drawing.Size(160, 26)
         Me.txtNo_kwit.TabIndex = 8
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(6, 19)
+        Me.Label3.Location = New System.Drawing.Point(8, 23)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(110, 16)
+        Me.Label3.Size = New System.Drawing.Size(136, 20)
         Me.Label3.TabIndex = 7
         Me.Label3.Text = "Tanggal Kwitansi"
         '
@@ -76,9 +79,10 @@ Partial Class frmcetakkwt
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(488, 18)
+        Me.Label2.Location = New System.Drawing.Point(651, 22)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(77, 16)
+        Me.Label2.Size = New System.Drawing.Size(98, 20)
         Me.Label2.TabIndex = 6
         Me.Label2.Text = "No Kwitansi"
         '
@@ -89,9 +93,11 @@ Partial Class frmcetakkwt
         Me.GroupBox1.Controls.Add(Me.dtpTgl_kwit)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 55)
+        Me.GroupBox1.Location = New System.Drawing.Point(16, 68)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(708, 46)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
+        Me.GroupBox1.Size = New System.Drawing.Size(944, 57)
         Me.GroupBox1.TabIndex = 10
         Me.GroupBox1.TabStop = False
         '
@@ -99,9 +105,10 @@ Partial Class frmcetakkwt
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(287, 23)
+        Me.Label1.Location = New System.Drawing.Point(383, 28)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(171, 29)
+        Me.Label1.Size = New System.Drawing.Size(211, 36)
         Me.Label1.TabIndex = 11
         Me.Label1.Text = "Cetak Kwitansi"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -109,18 +116,20 @@ Partial Class frmcetakkwt
         'txtNo_nota
         '
         Me.txtNo_nota.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNo_nota.Location = New System.Drawing.Point(119, 24)
+        Me.txtNo_nota.Location = New System.Drawing.Point(159, 30)
+        Me.txtNo_nota.Margin = New System.Windows.Forms.Padding(4)
         Me.txtNo_nota.Name = "txtNo_nota"
-        Me.txtNo_nota.Size = New System.Drawing.Size(121, 22)
+        Me.txtNo_nota.Size = New System.Drawing.Size(160, 26)
         Me.txtNo_nota.TabIndex = 13
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(0, 24)
+        Me.Label4.Location = New System.Drawing.Point(0, 30)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(58, 16)
+        Me.Label4.Size = New System.Drawing.Size(70, 20)
         Me.Label4.TabIndex = 12
         Me.Label4.Text = "No Nota"
         '
@@ -128,9 +137,10 @@ Partial Class frmcetakkwt
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(0, 67)
+        Me.Label6.Location = New System.Drawing.Point(0, 82)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(105, 16)
+        Me.Label6.Size = New System.Drawing.Size(131, 20)
         Me.Label6.TabIndex = 14
         Me.Label6.Text = "Nama Customer"
         '
@@ -138,9 +148,10 @@ Partial Class frmcetakkwt
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(382, 21)
+        Me.Label5.Location = New System.Drawing.Point(509, 26)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(78, 16)
+        Me.Label5.Size = New System.Drawing.Size(95, 20)
         Me.Label5.TabIndex = 15
         Me.Label5.Text = "Total Bayar"
         '
@@ -148,53 +159,58 @@ Partial Class frmcetakkwt
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(382, 67)
+        Me.Label7.Location = New System.Drawing.Point(509, 82)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(66, 16)
+        Me.Label7.Size = New System.Drawing.Size(78, 20)
         Me.Label7.TabIndex = 16
         Me.Label7.Text = "Terbilang"
         '
         'txtNm_cus
         '
         Me.txtNm_cus.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNm_cus.Location = New System.Drawing.Point(120, 67)
+        Me.txtNm_cus.Location = New System.Drawing.Point(160, 82)
+        Me.txtNm_cus.Margin = New System.Windows.Forms.Padding(4)
         Me.txtNm_cus.Name = "txtNm_cus"
-        Me.txtNm_cus.Size = New System.Drawing.Size(121, 22)
+        Me.txtNm_cus.Size = New System.Drawing.Size(160, 26)
         Me.txtNm_cus.TabIndex = 17
         '
         'txttotalbyr
         '
         Me.txttotalbyr.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txttotalbyr.Location = New System.Drawing.Point(504, 18)
+        Me.txttotalbyr.Location = New System.Drawing.Point(672, 22)
+        Me.txttotalbyr.Margin = New System.Windows.Forms.Padding(4)
         Me.txttotalbyr.Name = "txttotalbyr"
-        Me.txttotalbyr.Size = New System.Drawing.Size(121, 22)
+        Me.txttotalbyr.Size = New System.Drawing.Size(160, 26)
         Me.txttotalbyr.TabIndex = 18
         '
         'txtTerbilang
         '
         Me.txtTerbilang.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTerbilang.Location = New System.Drawing.Point(504, 62)
+        Me.txtTerbilang.Location = New System.Drawing.Point(672, 76)
+        Me.txtTerbilang.Margin = New System.Windows.Forms.Padding(4)
         Me.txtTerbilang.Multiline = True
         Me.txtTerbilang.Name = "txtTerbilang"
-        Me.txtTerbilang.Size = New System.Drawing.Size(156, 45)
+        Me.txtTerbilang.Size = New System.Drawing.Size(207, 54)
         Me.txtTerbilang.TabIndex = 19
         '
         'Label8
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.Label8.Location = New System.Drawing.Point(474, 24)
+        Me.Label8.Location = New System.Drawing.Point(632, 30)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(24, 13)
+        Me.Label8.Size = New System.Drawing.Size(30, 17)
         Me.Label8.TabIndex = 20
         Me.Label8.Text = "Rp."
         '
         'txtcari
         '
-        Me.txtcari.Controls.Add(Me.Button4)
-        Me.txtcari.Controls.Add(Me.Button3)
-        Me.txtcari.Controls.Add(Me.Button2)
-        Me.txtcari.Controls.Add(Me.Button1)
+        Me.txtcari.Controls.Add(Me.btn_keluar)
+        Me.txtcari.Controls.Add(Me.btn_batal)
+        Me.txtcari.Controls.Add(Me.btn_cetak)
+        Me.txtcari.Controls.Add(Me.btncari)
         Me.txtcari.Controls.Add(Me.Label8)
         Me.txtcari.Controls.Add(Me.txtTerbilang)
         Me.txtcari.Controls.Add(Me.txttotalbyr)
@@ -204,56 +220,63 @@ Partial Class frmcetakkwt
         Me.txtcari.Controls.Add(Me.Label6)
         Me.txtcari.Controls.Add(Me.txtNo_nota)
         Me.txtcari.Controls.Add(Me.Label4)
-        Me.txtcari.Location = New System.Drawing.Point(12, 123)
+        Me.txtcari.Location = New System.Drawing.Point(16, 151)
+        Me.txtcari.Margin = New System.Windows.Forms.Padding(4)
         Me.txtcari.Name = "txtcari"
-        Me.txtcari.Size = New System.Drawing.Size(707, 230)
+        Me.txtcari.Padding = New System.Windows.Forms.Padding(4)
+        Me.txtcari.Size = New System.Drawing.Size(943, 283)
         Me.txtcari.TabIndex = 21
         Me.txtcari.TabStop = False
         '
-        'Button1
+        'btn_keluar
         '
-        Me.Button1.Location = New System.Drawing.Point(267, 16)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 38)
-        Me.Button1.TabIndex = 21
-        Me.Button1.Text = "Cari"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btn_keluar.Location = New System.Drawing.Point(591, 225)
+        Me.btn_keluar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btn_keluar.Name = "btn_keluar"
+        Me.btn_keluar.Size = New System.Drawing.Size(100, 50)
+        Me.btn_keluar.TabIndex = 24
+        Me.btn_keluar.Text = "Keluar"
+        Me.btn_keluar.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btn_batal
         '
-        Me.Button2.Location = New System.Drawing.Point(304, 130)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(92, 45)
-        Me.Button2.TabIndex = 22
-        Me.Button2.Text = "Cetak"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btn_batal.Location = New System.Drawing.Point(247, 225)
+        Me.btn_batal.Margin = New System.Windows.Forms.Padding(4)
+        Me.btn_batal.Name = "btn_batal"
+        Me.btn_batal.Size = New System.Drawing.Size(100, 50)
+        Me.btn_batal.TabIndex = 23
+        Me.btn_batal.Text = "Batal"
+        Me.btn_batal.UseVisualStyleBackColor = True
         '
-        'Button3
+        'btn_cetak
         '
-        Me.Button3.Location = New System.Drawing.Point(185, 183)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 41)
-        Me.Button3.TabIndex = 23
-        Me.Button3.Text = "Batal"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btn_cetak.Location = New System.Drawing.Point(405, 160)
+        Me.btn_cetak.Margin = New System.Windows.Forms.Padding(4)
+        Me.btn_cetak.Name = "btn_cetak"
+        Me.btn_cetak.Size = New System.Drawing.Size(123, 55)
+        Me.btn_cetak.TabIndex = 22
+        Me.btn_cetak.Text = "Cetak"
+        Me.btn_cetak.UseVisualStyleBackColor = True
         '
-        'Button4
+        'btncari
         '
-        Me.Button4.Location = New System.Drawing.Point(443, 183)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(75, 41)
-        Me.Button4.TabIndex = 24
-        Me.Button4.Text = "Keluar"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.btncari.Location = New System.Drawing.Point(356, 20)
+        Me.btncari.Margin = New System.Windows.Forms.Padding(4)
+        Me.btncari.Name = "btncari"
+        Me.btncari.Size = New System.Drawing.Size(100, 47)
+        Me.btncari.TabIndex = 21
+        Me.btncari.Text = "Cari"
+        Me.btncari.UseVisualStyleBackColor = True
         '
         'frmcetakkwt
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(732, 382)
+        Me.ClientSize = New System.Drawing.Size(976, 470)
         Me.Controls.Add(Me.txtcari)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmcetakkwt"
         Me.Text = "Form Cetak Kwitansi"
         Me.GroupBox1.ResumeLayout(False)
@@ -280,8 +303,8 @@ Partial Class frmcetakkwt
     Friend WithEvents txtTerbilang As System.Windows.Forms.TextBox
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents txtcari As System.Windows.Forms.GroupBox
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Button4 As System.Windows.Forms.Button
-    Friend WithEvents Button3 As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents btncari As System.Windows.Forms.Button
+    Friend WithEvents btn_keluar As System.Windows.Forms.Button
+    Friend WithEvents btn_batal As System.Windows.Forms.Button
+    Friend WithEvents btn_cetak As System.Windows.Forms.Button
 End Class
